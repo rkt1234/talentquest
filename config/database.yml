@@ -5,13 +5,14 @@
 #   gem "sqlite3"
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
   database: storage/development.sqlite3
+  url: postgresql://neondb_owner:8c5BzXZnTDAJ@ep-old-frost-a53dd8hl.us-east-2.aws.neon.tech/neondb?sslmode=require
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
