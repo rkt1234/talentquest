@@ -4,4 +4,9 @@ Rails.application.routes.draw do
     post 'signin', to: 'authentication#signin' # POST /auth/signin
     post 'signup', to: 'authentication#signup' # POST /auth/signup
   end
+
+  namespace :user do
+    get 'home', to: 'user#home'
+    get 'home/my_results', to: 'user#my_results'
+  end
 end
