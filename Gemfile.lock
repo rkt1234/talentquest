@@ -375,7 +375,7 @@ DEPENDENCIES
   jbuilder
   jwt (~> 2.10)
   kamal
-  pg
+  pg (~> 1.1)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
