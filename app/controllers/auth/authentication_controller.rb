@@ -15,11 +15,11 @@ class Auth::AuthenticationController < ApplicationController
         # Generate the JWT token using the JwtService
         @token = JwtService.encode(payload)
         @message = "Registration successful"
-        @status = 200
+        @status_code = 200
       end
     rescue ActiveRecord::RecordNotUnique => e
       @message="E-mail already exists"
-      @status = 400 
+      @status_code = 400 
     end
     ensure
       render :signup, formats: :json

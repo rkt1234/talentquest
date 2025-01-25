@@ -1,2 +1,2 @@
 json.test_list @tests_list
-json.status @status 
+json.status @status_code 

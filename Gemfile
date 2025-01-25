@@ -66,3 +66,6 @@ end
 gem "bcrypt", "~> 3.1"
 
 gem "jwt", "~> 2.10"
+
+gem 'rack-cors'
+
