@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
-    get 'home/:ongoing_status', to: 'user#home'
+    get 'home/', to: 'user#home'
     get 'home/my_results', to: 'user#my_results'
     get 'home/test/:id', to: 'user#fetch_test_sections'
   end

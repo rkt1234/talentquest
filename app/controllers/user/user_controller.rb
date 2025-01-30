@@ -6,7 +6,7 @@ def home
     puts params[:ongoing_status]
     
     # Fetch only specific columns from the tests table
-    @all_tests = Test.select(:id, :test_name, :organization_name, :duration, :ongoing_status, :marks_obtained, :full_marks).where(ongoing_status: params[:ongoing_status])
+    @all_tests = Test.select(:id, :test_name, :organization_name, :duration, :ongoing_status, :full_marks).where(ongoing_status: params[:ongoing_status])
 
     if @all_tests.empty?
       @status_code = 200

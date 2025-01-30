@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_29_185954) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_30_035751) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -32,6 +32,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_29_185954) do
     t.integer "full_marks"
     t.string "duration"
     t.string "ongoing_status"
-    t.integer "marks_obtained"
   end
 end
