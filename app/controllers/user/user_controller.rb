@@ -2,12 +2,15 @@ class User::UserController < ApplicationController
   skip_before_action :verify_authenticity_token
 
 def home
+  puts "inside this"
   begin
     puts params[:ongoing_status]
     page = params[:page].to_i || 1
     per_page = 1
     # Fetch only specific columns from the tests table
-    @all_tests = Test.select(:id, :test_name, :organization_name, :duration, :ongoing_status, :full_marks).where(ongoing_status: params[:ongoing_status]).limit(per_page).offset((page - 1) * per_page)
+@all_tests = Test.select(:id, :test_name, :organization_name, :duration, :ongoing_status, :full_marks, :start_time, :end_time, :start_date, :end_date, :description)
+                 .where(params[:ongoing_status] == 'all' ? nil : { ongoing_status: params[:ongoing_status] })
+                 .limit(per_page).offset((page - 1) * per_page)
 
     if @all_tests.empty?
       @status_code = 200
