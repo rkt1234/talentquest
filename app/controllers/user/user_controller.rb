@@ -41,6 +41,7 @@ end
 def fetch_test_sections
   begin
     @test = Test.select(:sections).find(params[:id])  # Using `find` to raise an exception if not found
+    @test_instructions = Test.select(:instructions).find(params[:id])
     puts @test
     puts @test.attributes
     @status_code = 200
